@@ -1,0 +1,272 @@
+
+.containercard {
+  position: relative;
+  width: 100%;
+
+}
+
+
+
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: 1s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.containercard:hover .image {
+  opacity: 0.3;
+
+}
+
+.containercard:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 200px;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+
+/* TODO: Need to work on CSS to get it back to one two lines */
+.typeahead,
+.tt-query,
+.tt-hint {
+  /*width: 396px;
+  height: 30px;
+  padding: 8px 12px;
+  font-size: 24px;
+  line-height: 30px;
+  border: 2px solid #ccc;
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;*/
+  outline: none;
+}
+
+.typeahead {
+  /*background-color: #fff;*/
+}
+
+.typeahead:focus {
+  /*border: 2px solid #0097cf;*/
+}
+
+.tt-query {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+  color: #999
+}
+
+.tt-dropdown-menu {
+  width: 422px;
+  margin-top: 12px;
+  padding: 8px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
+
+.smallmargin {
+  margin-left: 10px;
+  padding-left: 10px;
+  margin-right: 10px;
+  padding-right: 10px;
+  width: 1300px;
+}
+
+
+.main-crs-image {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: black;
+    background-clip: border-box;
+    border: none;
+    border-radius: .25rem;
+}
+.exp{visibility: hidden;}
+
+.card-main {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-radius: 1px;
+    height:20px;
+    width:250px;
+    height:400px
+}
+
+.crs-overlay {
+ color:white;
+ font-weight: 750;
+ font-family: 'Dosis', sans-serif;
+ font-size: 11px;
+ text-transform: uppercase;
+
+
+}
+
+.carousel-item .col, .carousel-item .col-sm, .carousel-item .col-md {
+  margin: 8px;
+  height: 300px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.socials-main {
+  margin-left:5%;
+  margin-top:50px
+}
+
+.carousel-indicators {
+  margin-bottom:-10px;
+  width:50px
+}
+
+.latest-title {
+  margin-top:30px;
+  font-size:30px;
+  font-family: 'Dosis', sans-serif;
+  font-weight:800;
+  color:#abb7c4
+
+}
+.view-all {
+  margin-bottom:5px;
+  float:right;
+  font-family: 'Dosis', sans-serif;
+  font-size: 14px;
+  color: #abb7c4;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: 10px;
+
+}
+
+.title-wrapper {
+  height:75%;
+  width:99%;
+  background:#000000a3;
+  border-radius:5px;
+}
+
+.peek-title {
+  color:white;
+  font-size:40px;
+  font-family: 'Dosis', sans-serif;
+  color: #abb7c4;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.peek-wrapper {
+  position:relative;
+  bottom: -100px;
+  text-align: center;
+  margin-bottom:100px
+
+}
+
+.main-second-content {
+  background:#f2f6f8;
+  margin-top:150px
+}
+
+.next-title {
+  margin-top:30px;
+  font-size:30px;
+  font-family: 'Dosis', sans-serif;
+  font-weight:800;
+  color:#5f7286;
+
+}
+
+.see-more {
+  background:black;
+  font-size:10px;
+  margin-bottom:40px;
+
+}
+
+.star {
+  font-size:17px;
+  margin-left:0%;
+
+}
+
+.imdb-rating {
+  font-size:17px;
+  color:white;
+
+}
+
+.ten {
+  font-size:12px;
+  color:white;
+
+}

@@ -1,0 +1,81 @@
+{%load static%}
+
+{% block content %}
+
+
+
+<footer class="site-footer footer-wrapper">
+        <div class="container">
+            <div class="row">
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title footer-title">About Us</h3>
+								<ul class="no-bullet">
+									<li><a href="/about/">Do you want to know more about us?</a></li>
+
+
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title footer-title">Recent Review</h3>
+								<ul class="no-bullet">
+									{%if latest_1%}
+									{%for i in latest_1%}
+									<li><a href="movie/detail/{{i.url}}">{{i.title}}</a></li>
+									{%endfor%}
+									{%else%}
+									<a href="/movie/"> Go to the movie colection</a>
+									{%endif%}
+
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title footer-title">Help Center</h3>
+								<ul class="no-bullet">
+									<li><a href="/contact/">Do you need any help?</a></li>
+									<li><a href="/contact/">Go to contact and send us the question.</a></li>
+
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="widget" >
+								<h3 class="widget-title footer-title">Join Us</h3>
+								<ul class="no-bullet">
+									<li><a href="/contact/">If you are passionate about movies <br> and do you want to join us, go to <br> contact section and let us know.</a></li>
+
+
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title footer-title">Social Media</h3>
+								<ul class="no-bullet">
+									<li><a href="/in-progress/">Instagram</a></li>
+									<li><a href="/in-progress/">Facebook</a></li>
+									<li><a href="/in-progress/">YouTube</a></li>
+
+								</ul>
+							</div>
+						</div>
+						<!--<div class="col-md-2">-->
+							<!--<div class="widget">-->
+								<!--<h3 class="widget-title">Newsletter</h3>-->
+								<!--<form action="#" class="subscribe-form">-->
+									<!--<input type="text" placeholder="Email Address">-->
+								<!--</form>-->
+							<!--</div>-->
+						<!--</div>-->
+					</div> <!-- .row -->
+
+					<div class="colophon copyright">Copyright 2021 TheWatcher, Designed by TheWatcher. All rights reserved</div>
+				</div> <!-- .container -->
+
+			</footer>
+
+{% endblock content %}
