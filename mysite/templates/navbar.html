@@ -1,0 +1,142 @@
+{%load static%}
+
+
+{% block content %}
+
+
+
+<header class="page-header" >
+  <nav id="navbar-1">
+    <button aria-label="Open Mobile Menu" class="open-mobile-menu fa-lg">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+
+    </button>
+    <a href="/" style="text-decoration: none !important;">
+  <h3 class="logo-text"><span class="logo-primary">The</span><span class="logo-secondary">Watcher</span></h3>
+
+    </a>
+    <div class="top-menu-wrapper">
+      <div class="panel panel1"></div>
+      <div class="panel panel2"></div>
+      <ul class="top-menu">
+        <li class="mob-block">
+          <h3 class="logo-text"><span class="logo-primary">The</span><span class="logo-secondary" style="color:black">Watcher</span></h3>
+
+          <button aria-label="Close Mobile Menu" class="close-mobile-menu fa-lg">
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+        </li>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/movie/">Movies Collection</a>
+        </li>
+
+        <li class="has-dropdown">
+          <a href="">
+            About Us
+            <i class="fas fa-chevron-down"></i>
+          </a>
+          <ul class="sub-menu" style="margin-left:10px">
+            <li>
+              <a href="/contact/">Contact</a>
+            </li>
+            <li>
+              <a href="/about/">Who are we</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul class="socials">
+            <li>
+              <a href="/in-progress/">
+                <span class="fa-stack fa-2x">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="/in-progress/">
+                <span class="fa-stack fa-2x">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="/in-progress/">
+                <span class="fa-stack fa-2x">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <button class="search">
+        <i class="fas fa-search fa-lg"></i>
+
+      </button>
+      <form class="search-form" type="get" action="/movie/">
+        <div>
+          <input id="search_box" type="text" name="search_box"  placeholder="Search...">
+          <button id="search_submit" aria-label="Search Resources" type="submit">
+            <i class="fas fa-search fa-2x" aria-hidden="true"></i>
+        </button>
+
+
+
+        </div>
+      </form>
+    </div>
+  </nav>
+</header>
+
+<script>
+
+const pageHeader = document.querySelector(".page-header");
+const openMobMenu = document.querySelector(".open-mobile-menu");
+const closeMobMenu = document.querySelector(".close-mobile-menu");
+const toggleSearchForm = document.querySelector(".search");
+const searchForm = document.querySelector(".page-header form");
+const topMenuWrapper = document.querySelector(".top-menu-wrapper");
+const isVisible = "is-visible";
+const showOffCanvas = "show-offcanvas";
+const noTransition = "no-transition";
+let resize;
+
+openMobMenu.addEventListener("click", () => {
+  topMenuWrapper.classList.add(showOffCanvas);
+});
+
+closeMobMenu.addEventListener("click", () => {
+  topMenuWrapper.classList.remove(showOffCanvas);
+});
+
+toggleSearchForm.addEventListener("click", () => {
+  searchForm.classList.toggle(isVisible);
+});
+
+window.addEventListener("resize", () => {
+  pageHeader.querySelectorAll("*").forEach(function(el) {
+    el.classList.add(noTransition);
+  });
+  clearTimeout(resize);
+  resize = setTimeout(resizingComplete, 500);
+});
+
+function resizingComplete() {
+  pageHeader.querySelectorAll("*").forEach(function(el) {
+    el.classList.remove(noTransition);
+  });
+};
+
+
+
+
+</script>
+
+{% endblock content %}

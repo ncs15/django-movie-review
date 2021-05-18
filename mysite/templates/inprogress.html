@@ -1,0 +1,80 @@
+{%extends 'base.html'%}
+{% load static%}
+
+<style>
+
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: transparent;
+}
+ul.breadcrumb li {
+  display: inline;
+  font-size: 16px;
+}
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: white;
+  content: "/\00a0";
+}
+ul.breadcrumb li a {
+  color: white;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: green;
+  text-decoration: underline;
+}
+
+</style>
+</head>
+
+{% include "navbar.html" %}
+{% block content %}
+
+
+
+
+
+<body  >
+		<div id="site-content" >
+			<main class="main-content" >
+				<div class="container" >
+					<div class="page">
+						<ul class="breadcrumb">
+                          <li><a href="/">Home</a></li>
+                          <li>In progress</li>
+                        </ul>
+
+                        <div class="content" style="margin-top:50px;margin-bottom:280px">
+                            <h3>Hang in there..</h3>
+                            <p>We are working on that and we will keep you posted.</p>
+
+
+                        </div>
+
+
+
+
+
+
+						</div>
+					</div>
+
+
+
+
+
+
+
+			</main>
+
+
+
+
+		<!-- Default snippet for navigation -->
+
+ </div>
+        </body>
+
+{% endblock %}

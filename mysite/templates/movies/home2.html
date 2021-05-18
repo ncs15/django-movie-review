@@ -1,0 +1,634 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content %}
+<body>
+<div class="contentst" style="z-index: 4">
+<div id="site-content">
+
+    <main class="main-content">
+
+<ul class="socials-main">
+    Follow us:
+            <li style="display:inline">
+              <a href="/in-progress/">
+                <span class="fa-stack fa-2x">
+                  <i class="fas fa-circle fa-stack-1x"></i>
+                  <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+
+            <li style="display:inline;">
+              <a href="/in-progress/">
+                <span class="fa-stack fa-2x">
+                  <i class="fas fa-circle fa-stack-1x"></i>
+                  <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li style="display:inline;">
+              <a href="/in-progress/">
+                <span class="fa-stack fa-2x">
+                  <i class="fas fa-circle fa-stack-1x"></i>
+                  <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        <div class="container">
+
+            <div class="page">
+
+
+
+                <div class="container-fluid" style="margin-bottom:50px">
+
+
+                    <div  class="row" style="margin-top: 25px;">
+                        <div class="col-sm-12">
+                            <div id="myCarousel-3" class="carousel slide" data-ride="carousel" data-interval="50000000"  style="margin-left:40px">
+                                <!-- Indicators -->
+                                <ul class="carousel-indicators" style="">
+                                    <li data-target="#myCarousel-3" data-slide-to="0" class="item1 active"></li>
+                                    <li data-target="#myCarousel-3" data-slide-to="1" class="item2"></li>
+                                    <li data-target="#myCarousel-3" data-slide-to="2" class="item3"></li>
+                                </ul>
+
+
+
+                                <!-- The slideshow -->
+                                <h3 class="latest-title">#Latest Movies</h3>
+                                <a href="/movie/" class="view-all">View all <span style="font-size:20px">&#8250;</span></a>
+
+                                <div class="carousel-inner" style="margin-bottom:50px">
+
+                                     <!--First slide-->
+                                    <div class="carousel-item active" >
+
+                                        <div class="row" >
+                                            {%for i in latest_1%}
+
+
+                                            <div class="col-md-3"  >
+                                              <div class="card-main mb-2">
+                                                  <div class="">
+                                                      <img  class="image crs-image" src="{{i.image.url}}" style="width:240px;height:380px"
+                                                        alt="Card image cap">
+                                                      <div class="card-img-overlay" style=";margin-top:100%;margin-left: -2%;">
+                                                          <div class="title-wrapper">
+                                                              <h3 style="text-align: center;">
+                                                                  <a class="crs-overlay" href="movie/detail/{{i.url}}">{{i.title}} ({{i.relese_date}})</a>
+                                                                  <p>
+                                                                    <span class="star">&#11088;</span>
+                                                                    <span class="imdb-rating">{{i.imdb_rating}}</span>
+                                                                  <span class="ten">/10</span>
+                                                                 </p>
+                                                              </h3>
+
+                                                              {%if i.category1 == "Comedy"%}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:25%;color:white;padding:4px;background:#66ff66;border-radius:5px;margin-bottom:30px">{{i.category1}}</span>
+                                                          {%elif i.category1 == "Adventure" %}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:25%;color:white;padding:4px;background:#007bff;border-radius:5px;margin-bottom:30px">{{i.category1}}</span>
+                                                              {%elif i.category1 == "Action" %}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:25%;color:white;padding:4px;background:#ff6600;border-radius:5px;margin-bottom:30px">{{i.category1}}</span>
+                                                            {%else%}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:25%;color:white;padding:4px;background:#ff66ff;border-radius:5px;margin-bottom:30px">{{i.category1}}</span>
+
+                                                              {%endif%}
+                                                          {%if i.category2 == "Comedy"%}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:2px;color:white;padding:4px;background:#66ff66;border-radius:5px;margin-bottom:30px">{{i.category2}}</span>
+                                                          {%elif i.category2 == "Adventure" %}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:2px;color:white;padding:4px;background:#007bff;border-radius:5px;margin-bottom:30px">{{i.category2}}</span>
+                                                              {%elif i.category2 == "Action" %}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:2px;color:white;padding:4px;background:#ff6600;border-radius:5px;margin-bottom:30px">{{i.category2}}</span>
+                                                            {%else%}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:2px;color:white;padding:4px;background:#ff66ff;border-radius:5px;margin-bottom:30px">{{i.category2}}</span>
+
+                                                              {%endif%}
+                                                          </div>
+                                                      </div>
+
+
+
+
+                                                    </div>
+                                              </div>
+                                            </div>
+                                {%endfor%}
+
+                                      </div>
+
+                                    </div>
+                                    <!--/.First slide-->
+
+
+                                    <!--Second slide-->
+                                    <div class="carousel-item" >
+
+                                        <div class="row" >
+                                            {%for i in latest_2%}
+
+
+                                            <div class="col-md-3" >
+                                              <div class="card-main mb-2">
+                                                  <div class="">
+                                                      <img  class="image" src="{{i.image.url}}" style="width:240px;height:380px"
+                                                        alt="Card image cap">
+                                                      <div class="card-img-overlay" style=";margin-top:100%;margin-left: -2%;">
+                                                          <div class="title-wrapper">
+                                                              <h3 style="text-align: center;">
+                                                                  <a  class="crs-overlay" href="movie/detail/{{i.url}}">{{i.title}} ({{i.relese_date}})</a>
+                                                                  <p>
+                                                                    <span class="star">&#11088;</span>
+                                                                    <span class="imdb-rating">{{i.imdb_rating}}</span>
+                                                                  <span class="ten">/10</span>
+                                                                 </p>
+                                                              </h3>
+
+                                                              {%if i.category1 == "Comedy"%}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:25%;color:white;padding:4px;background:#66ff66;border-radius:5px;margin-bottom:30px">{{i.category1}}</span>
+                                                          {%elif i.category1 == "Adventure" %}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:25%;color:white;padding:4px;background:#007bff;border-radius:5px;margin-bottom:30px">{{i.category1}}</span>
+                                                              {%elif i.category1 == "Action" %}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:25%;color:white;padding:4px;background:#ff6600;border-radius:5px;margin-bottom:30px">{{i.category1}}</span>
+                                                            {%else%}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:25%;color:white;padding:4px;background:#ff66ff;border-radius:5px;margin-bottom:30px">{{i.category1}}</span>
+
+                                                              {%endif%}
+                                                          {%if i.category2 == "Comedy"%}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:2px;color:white;padding:4px;background:#66ff66;border-radius:5px;margin-bottom:30px">{{i.category2}}</span>
+                                                          {%elif i.category2 == "Adventure" %}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:2px;color:white;padding:4px;background:#007bff;border-radius:5px;margin-bottom:30px">{{i.category2}}</span>
+                                                              {%elif i.category2 == "Action" %}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:2px;color:white;padding:4px;background:#ff6600;border-radius:5px;margin-bottom:30px">{{i.category2}}</span>
+                                                            {%else%}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:2px;color:white;padding:4px;background:#ff66ff;border-radius:5px;margin-bottom:30px">{{i.category2}}</span>
+
+                                                              {%endif%}
+                                                          </div>
+                                                      </div>
+
+
+
+
+                                                    </div>
+                                              </div>
+                                            </div>
+                                {%endfor%}
+
+                                      </div>
+
+                                    </div>
+                                    <!--/.Second slide-->
+                                    <!--Third slide-->
+                                    <div class="carousel-item" >
+
+                                        <div class="row" >
+                                            {%for i in latest_3%}
+
+
+                                            <div class="col-md-3" >
+                                              <div class="card-main mb-2">
+                                                  <div class="">
+                                                      <img  class="image" src="{{i.image.url}}" style="width:240px;height:380px"
+                                                        alt="Card image cap">
+                                                      <div class="card-img-overlay" style=";margin-top:100%;margin-left: -2%;">
+                                                          <div class="title-wrapper">
+                                                              <h3 style="text-align: center;">
+                                                                  <a  class="crs-overlay" href="movie/detail/{{i.url}}">{{i.title}} ({{i.relese_date}})</a>
+                                                                  <p>
+                                                                    <span class="star">&#11088;</span>
+                                                                    <span class="imdb-rating">{{i.imdb_rating}}</span>
+                                                                  <span class="ten">/10</span>
+                                                                 </p>
+                                                              </h3>
+
+                                                              {%if i.category1 == "Comedy"%}
+                                                          <span  class="btn btn-primary" style="border-color:#ff000000;margin-left:25%;color:white;padding:4px;background:#66ff66;border-radius:5px;margin-bottom:30px">{{i.category1}}</span>
+                                                          {%elif i.category1 == "Adventure" %}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:25%;color:white;padding:4px;background:#007bff;border-radius:5px;margin-bottom:30px">{{i.category1}}</span>
+                                                              {%elif i.category1 == "Action" %}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:25%;color:white;padding:4px;background:#ff6600;border-radius:5px;margin-bottom:30px">{{i.category1}}</span>
+                                                            {%else%}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:25%;color:white;padding:4px;background:#ff66ff;border-radius:5px;margin-bottom:30px">{{i.category1}}</span>
+
+                                                              {%endif%}
+                                                          {%if i.category2 == "Comedy"%}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:2px;color:white;padding:4px;background:#66ff66;border-radius:5px;margin-bottom:30px">{{i.category2}}</span>
+                                                          {%elif i.category2 == "Adventure" %}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:2px;color:white;padding:4px;background:#007bff;border-radius:5px;margin-bottom:30px">{{i.category2}}</span>
+                                                              {%elif i.category2 == "Action" %}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:2px;color:white;padding:4px;background:#ff6600;border-radius:5px;margin-bottom:30px">{{i.category2}}</span>
+                                                            {%else%}
+                                                          <span class="btn btn-primary" style="border-color:#ff000000;margin-left:2px;color:white;padding:4px;background:#ff66ff;border-radius:5px;margin-bottom:30px">{{i.category2}}</span>
+
+                                                              {%endif%}
+                                                          </div>
+                                                      </div>
+
+
+
+
+                                                    </div>
+                                              </div>
+                                            </div>
+                                {%endfor%}
+
+                                      </div>
+
+                                    </div>
+                                    <!--/.Third slide-->
+
+                                 <!--endcarouselinnder-->
+                                </div>
+                            </div>
+                        </div>
+
+                  </div>
+              </div>
+
+
+
+
+
+                  </div>
+
+
+                    <div class="peek-wrapper">
+                        <h2 class="peek-title">You might also Take a peek...<span style="font-size:50px">&#8628;</span></h2>
+
+                    </div>
+
+
+
+            <!--endpage    -->
+            </div>
+                </div>
+
+             </div>
+
+    </main>
+
+        <div class="main-second-content">
+             <main class="main-content" >
+
+        <div class="container" >
+
+            <div class="page" >
+
+
+                <div class="container-fluid" >
+
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div id="myCarousel-1" class="carousel slide" data-ride="carousel" data-interval="4500000">
+                                <!-- Indicators -->
+                                <ul class="carousel-indicators">
+                                    <li data-target="#myCarousel-1" data-slide-to="0" class="item1 active"></li>
+                                    <li data-target="#myCarousel-1" data-slide-to="1" class="item2"></li>
+                                    <li data-target="#myCarousel-1" data-slide-to="2" class="item3"></li>
+                                </ul>
+
+
+                                <!-- The slideshow -->
+                                <h3 class="next-title">#Coming next </h3>
+                                <a href="/movie/coming-next/" class="view-all">View all <span style="font-size:20px">&#8250;</span></a>
+                                <div class="carousel-inner" style="position:relative;left:4%;">
+                                     <!--First slide-->
+                                    <div class="carousel-item active">
+
+                                        <div class="row">
+                                            {%for i in coming_next1%}
+
+                                            <div class="col-md-4" >
+                                              <div class="card mb-2" style="margin-left:15%;width: 190px;" >
+                                                  <div class="containercard">
+                                                      <img  class="image" src="{{i.image.url}}"
+                                                        alt="Card image cap" style=";height:265px">
+                                                      <div class="card-img-overlay" style="margin-right:-5%;margin-left:-5%;margin-top:100%;width: 200px;">
+                                                          <div class="title-wrapper">
+                                                              <h3  style="text-align: center;">
+                                                                  <a class="crs-overlay" href="movie/detail/{{i.url}}">{{i.title}} ({{i.relese_date}})</a>
+
+                                                              </h3>
+                                                          </div>
+                                                      </div>
+
+                                                          <div class="middle">
+                                                              <a href="/movie/detail/{{i.url}}" class="btn btn-primary see-more">Read More</a>
+                                                          </div>
+
+
+                                                    </div>
+                                              </div>
+                                            </div>
+                                {%endfor%}
+
+                                      </div>
+
+                                    </div>
+                                    <!--/.First slide-->
+
+
+                                    <!--Second slide-->
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            {%for i in coming_next2%}
+
+                                            <div class="col-md-4" >
+                                              <div class="card mb-2" style="margin-left:15%;width: 190px;">
+                                                  <div class="containercard">
+                                                      <img  class="image" src="{{i.image.url}}"
+                                                        alt="Card image cap" style=";height:265px">
+                                                      <div class="card-img-overlay" style="margin-left:-5%;margin-top:100%;width: 200px;">
+                                                          <div class="title-wrapper">
+                                                              <h3  style="text-align: center;">
+                                                                  <a class="crs-overlay" href="movie/detail/{{i.url}}">{{i.title}} ({{i.relese_date}})</a>
+
+                                                              </h3>
+                                                          </div>
+                                                      </div>
+
+                                                          <div class="middle">
+                                                              <a href="/movie/detail/{{i.url}}" class="btn btn-primary see-more">Read More</a>
+                                                          </div>
+
+
+                                                    </div>
+                                              </div>
+                                            </div>
+                                {%endfor%}
+                                        </div>
+                                    </div>
+                                    <!--/.Second slide-->
+                                    <!--Third slide-->
+                                     <div class="carousel-item">
+                                        <div class="row">
+                                            {%for i in coming_next3%}
+
+                                            <div class="col-md-4" >
+                                              <div class="card mb-2" style="margin-left:15%;width: 190px;">
+                                                  <div class="containercard">
+                                                      <img  class="image" src="{{i.image.url}}"
+                                                        alt="Card image cap" style=";height:265px">
+                                                      <div class="card-img-overlay" style="margin-left:-5%;margin-top:100%;width: 200px;">
+                                                          <div class="title-wrapper">
+                                                              <h3  style="text-align: center;">
+                                                                  <a class="crs-overlay" href="movie/detail/{{i.url}}">{{i.title}} ({{i.relese_date}})</a>
+
+                                                              </h3>
+                                                          </div>
+                                                      </div>
+
+                                                          <div class="middle">
+                                                              <a href="/movie/detail/{{i.url}}" class="btn btn-primary see-more">Read More</a>
+                                                          </div>
+
+
+                                                    </div>
+                                              </div>
+                                            </div>
+                                {%endfor%}
+                                        </div>
+                                    </div>
+                                    <!--/.Third slide-->
+
+                                 <!--endcarouselinnder-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 clearfix" style="position:relative;left:1%;margin-top: 4%;border-color:black">
+                            <div class="card mb-2">
+                                <div class="card-body">
+
+                                  <h4 class="card-title" style="color:black;text-align:center">Did you see it?</h4>
+                                    <hr style="border: 1px solid black">
+                                    <p>In what movie was the following line said?</p>
+                                    <i>"{{quiz.quiz}}"</i>
+
+                                    <ul style="margin-top:5px">
+                                        <p style="font-size:10px;margin-top:10px">Choose the right answer:</p>
+                                        <li style="padding:5px"><button style="background:black;width:100%;border-color:#ff000000;" onclick="unhide()" class="btn btn-primary">a. {{quiz.ans1}}</button></li>
+                                        <li style="padding:5px"><button style="background:black;width:100%;border-color:#ff000000;"  onclick="unhide()" class="btn btn-primary">b. {{quiz.ans2}}</button></li>
+                                        <li style="padding:5px"><button style="background:black;width:100%;border-color:#ff000000;"     onclick="unhide()" class="btn btn-primary">c .{{quiz.ans3}}</button></li>
+                                    </ul>
+                                    <div class="exp">
+                                        <p class="and" style="margin-top:5px"><span style="font-size:12px">Correct answer is:  </span><span style="color:green"> {{quiz.correct}}</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
+
+                    <div  class="row" style="margin-top: 25px;">
+                        <div class="col-sm-8">
+                            <div id="myCarousel-2" class="carousel slide" data-ride="carousel" data-interval="45000000">
+                                <!-- Indicators -->
+                                <ul class="carousel-indicators">
+                                    <li data-target="#myCarousel-2" data-slide-to="0" class="item1 active"></li>
+                                    <li data-target="#myCarousel-2" data-slide-to="1" class="item2"></li>
+                                    <li data-target="#myCarousel-2" data-slide-to="2" class="item3"></li>
+                                </ul>
+
+
+
+
+                                <!-- The slideshow -->
+                                <h3 class="next-title">#Popular </h3>
+                                <a href="/movie/popular/" class="view-all">View all <span style="font-size:20px">&#8250;</span></a>
+
+                                <div class="carousel-inner" style="margin-bottom:50px;position:relative;left:4%">
+
+                                     <!--First slide-->
+                                    <div class="carousel-item active" >
+
+                                        <div class="row" >
+                                            {%for i in popular_1%}
+
+
+                                            <div class="col-md-4" >
+                                              <div class="card mb-2" style="margin-left:15%;width: 190px;">
+                                                  <div class="containercard">
+                                                      <img  class="image" src="{{i.image.url}}"
+                                                        alt="Card image cap" style=";height:265px">
+                                                      <div class="card-img-overlay" style=";margin-left:-5%;margin-top:100%;width: 205px;height:90px">
+                                                          <div class="title-wrapper">
+                                                              <h3  style="text-align: center;">
+                                                                  <a class="crs-overlay " href="movie/detail/{{i.url}}">{{i.title}} ({{i.relese_date}})</a>
+                                                                  <p>
+                                                                    <span class="star">&#11088;</span>
+                                                                    <span class="imdb-rating">{{i.imdb_rating}}</span>
+                                                                  <span class="ten">/10</span>
+                                                                 </p>
+                                                              </h3>
+                                                          </div>
+                                                      </div>
+
+                                                          <div class="middle">
+                                                              <a href="/movie/detail/{{i.url}}" class="btn btn-primary see-more">Read More</a>
+                                                          </div>
+
+
+                                                    </div>
+                                              </div>
+                                            </div>
+                                {%endfor%}
+
+                                      </div>
+
+                                    </div>
+                                    <!--/.First slide-->
+
+
+                                    <!--Second slide-->
+                                    <div class="carousel-item">
+                                        <div class="row">
+                                            {%for i in popular_2%}
+
+                                            <div class="col-md-4" >
+                                              <div class="card mb-2" style="margin-left:15%;width: 190px;">
+                                                  <div class="containercard">
+                                                      <img  class="image" src="{{i.image.url}}"
+                                                        alt="Card image cap" style=";height:265px">
+                                                      <div class="card-img-overlay" style="margin-left:-5%;margin-top:100%;width: 205px;height:90px">
+                                                          <div class="title-wrapper">
+                                                              <h3  style="text-align: center;">
+                                                                  <a class="crs-overlay" href="movie/detail/{{i.url}}">{{i.title}} ({{i.relese_date}})</a>
+                                                                  <p>
+                                                                    <span class="star">&#11088;</span>
+                                                                    <span class="imdb-rating">{{i.imdb_rating}}</span>
+                                                                  <span class="ten">/10</span>
+                                                                 </p>
+                                                              </h3>
+                                                          </div>
+                                                      </div>
+
+                                                          <div class="middle">
+                                                              <a href="/movie/detail/{{i.url}}" class="btn btn-primary see-more">Read More</a>
+                                                          </div>
+
+
+                                                    </div>
+                                              </div>
+                                            </div>
+                                {%endfor%}
+
+                                      </div>
+                                    </div>
+                                    <!--/.Second slide-->
+                                    <!--Third slide-->
+                                    <div class="carousel-item">
+                                        <div class="row">
+
+                                            {%for i in popular_3%}
+
+                                            <div class="col-md-4" >
+                                              <div class="card mb-2" style="margin-left:15%;width: 190px;">
+                                                  <div class="containercard">
+                                                      <img  class="image" src="{{i.image.url}}"
+                                                        alt="Card image cap" style=";height:265px">
+                                                      <div class="card-img-overlay" style="margin-left:-5%;margin-top:100%;width: 205px;height:90px">
+                                                          <div class="title-wrapper">
+                                                              <h3  style="text-align: center;"  >
+                                                                  <a class="crs-overlay" href="movie/detail/{{i.url}}">{{i.title}} ({{i.relese_date}})</a>
+                                                                  <p>
+                                                                    <span class="star">&#11088;</span>
+                                                                    <span class="imdb-rating">{{i.imdb_rating}}</span>
+                                                                  <span class="ten">/10</span>
+                                                                 </p>
+                                                              </h3>
+                                                          </div>
+                                                      </div>
+
+                                                          <div class="middle">
+                                                              <a href="/movie/detail/{{i.url}}" class="btn btn-primary see-more">Read More</a>
+                                                          </div>
+
+
+                                                    </div>
+                                              </div>
+                                            </div>
+                                {%endfor%}
+
+
+
+
+                                        </div>
+
+                                    </div>
+                                    <!--/.Third slide-->
+
+                                 <!--endcarouselinnder-->
+                                </div>
+                            </div>
+                        </div>
+
+                  </div>
+              </div>
+
+                 </div>
+
+             </div>
+
+
+    </main>
+
+
+
+
+</div>
+    <!--end white bg-->
+</div>
+
+
+
+<!--end site-container    -->
+</div>
+
+
+<script>
+    function unhide() {
+    var hid = document.getElementsByClassName("exp");
+    // Emulates jQuery $(element).is(':hidden');
+    if(hid[0].offsetWidth > 0 && hid[0].offsetHeight > 0) {
+        hid[0].style.visibility = "visible";
+    }
+}
+
+</script>
+
+
+<script>
+    function checkWidth(init)
+{
+    /*If browser resized, check width again */
+    if ($(window).width() > 767) {
+        for(var i=1; i<=3; i++){
+            $("#myCarousel-"+i).carousel({
+		       interval : 5000
+
+
+	});
+	}
+    }
+}
+
+$(document).ready(function() {
+    checkWidth(true);
+
+    $(window).resize(function() {
+        checkWidth(false);
+    });
+});
+
+
+</script>
+
+
+
+
+</body>
+</html>
+{% endblock content %}
+
+

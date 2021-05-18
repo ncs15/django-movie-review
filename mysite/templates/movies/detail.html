@@ -1,0 +1,208 @@
+
+{%extends 'base.html'%}
+{% load static%}
+
+{% block content %}
+
+{%for i in movie%}
+
+
+
+<body  >
+		<div id="site-content" >
+			<main class="main-content" >
+				<div class="container" >
+					<div class="page">
+						<ul class="breadcrumb">
+                          <li><a href="/movie">Movies Colection</a></li>
+                          <li>{{i.title}}</li>
+                        </ul>
+
+						<div class="content" style="margin-top:50px">
+							<div class="row">
+								<div class="col-md-4 d-flex justify-content-center" style="">
+									<figure class="movie-poster " ><img src="{{i.image.url}}" style="width:300px;" alt="#">
+                                    <div class="movie-btn">
+
+							<div ><button id="playme" onclick="revealVideo('video','youtube')"> <i class="fas fa-play"></i>  Watch Trailer</button></div>
+
+					</div></figure>
+
+
+
+
+
+
+								</div>
+								<div class="col-md-8" style="margin-top:40px;width:90%">
+									<h1 style="" class="movie-title">{{i.title}}</h1>
+									<div class="movie-summary" style="margin-bottom:30px">
+										<p>{{i.description}}</p>
+
+										</div>
+									<ul class="movie-meta ">
+										<li class="details-info"><strong>Rating IMDB: </strong>{{i.imdb_rating}}/10</li>
+										<li class="details-info"><strong>Length:</strong> {{i.length}} min</li>
+										<li class="details-info"><strong>Premiere:</strong> {{i.relese_date}}</li>
+										<li class="details-info"><strong>Category: </strong> {{i.category1}} / {{i.category2}} / {{i.category3}}</li>
+                                        <li class="details-info"><strong>Budget: $</strong> {{i.budget}}</li>
+                                        <li class="details-info"><strong>Cumulative Worldwide Gross: $</strong> {{i.cum_gross}}</li>
+
+									</ul>
+
+									<ul class="starring">
+										<li class="details-info"><strong>Directors:</strong> {{i.directors}}</li>
+										<li class="details-info"><strong>Writers:</strong> {{i.writers}}</li>
+										<li class="details-info"><strong>Stars:</strong> {{i.stars}}</li>
+									</ul>
+								</div>
+							</div> <!-- .row -->
+							<!--<div class="entry-content">-->
+
+                            <div class="tab-detail" style="margin-top:50px">
+                              <button class="tablinks active" onclick="openCity(event, 'Review')">Our opinion</button>
+                              <button class="tablinks" onclick="openCity(event, 'Related')">You might also like</button>
+                              <button  class="tablinks" onclick="openCity(event, 'Other')">Other</button>
+                            </div>
+
+                            <div id="Review" class="tab-detail-content" style="display:block">
+<br>
+                              <p >{{i.review}}</p>
+                            </div>
+
+                            <div id="Related" class="tab-detail-content">
+
+
+
+                                <div class="wrapper_collection">
+<br>
+                                    <div class="row" style="margin-left:5px;margin-right:5px;padding:20px">
+
+                                        {%for i in  movies %}
+
+
+                                            <div class="col-md-3 d-flex justify-content-center  " style="margin-bottom:30px">
+                                              <div class="card mb-2 related-card">
+                                                  <div class="containercard">
+                                                      <img  class="image" src="{{i.image.url}}"
+                                                        alt="Card image cap" style="width:190px;height:265px">
+                                                      <div class="card-img-overlay related-card-overlay">
+                                                          <div class="related-wrapper">
+                                                              <h3 style="text-align:center">
+                                                                  <a class="crs-overlay" href="/movie/detail/{{i.url}}">{{i.title}} ({{i.relese_date}})</a>
+                                                                  <p>
+                                                                    <span style="font-size:17px">&#11088;</span>
+                                                                    <span style="font-size:17px;color:white">{{i.imdb_rating}}</span>
+                                                                  <span style="font-size:12px;color:white">/10</span>
+                                                                 </p>
+                                                              </h3>
+                                                          </div>
+                                                      </div>
+
+
+
+
+                                                    </div>
+                                              </div>
+                                            </div>
+
+
+
+{% endfor%}
+                                      </div>
+
+                                    </div>
+
+
+
+                            </div>
+
+                            <div id="Other" class="tab-detail-content">
+                              <h3>{{i.other}}</h3>
+                              
+                            </div>
+
+
+						</div>
+					</div>
+
+
+<div id="video" class="lightbox" onclick="hideVideo('video','youtube')">
+  <div class="lightbox-container">
+    <div class="lightbox-content">
+
+      <button onclick="hideVideo('video','youtube')" class="lightbox-close">
+        Close | ?
+      </button>
+      <div class="video-container">
+         <object id="youtube" class="yt-video-pos"><param name="movie" value="{{i.yt_link}}"><param name="allowFullScreen" value="true" frameborder="0" ></object>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+				</div> <!-- .container -->
+			</main>
+
+		</div>
+		<!-- Default snippet for navigation -->
+
+
+	</body>
+
+<script>
+    function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tab-detail-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+};
+
+
+// Function to reveal lightbox and adding YouTube autoplay
+function revealVideo(div,video_id) {
+  var video = document.getElementById(video_id).src;
+  document.getElementById(video_id).src = video+'&autoplay=1'; // adding autoplay to the URL
+  document.getElementById(div).style.display = 'block';
+}
+
+// Hiding the lightbox and removing YouTube autoplay
+function hideVideo(div,video_id) {
+  var video = document.getElementById(video_id).src;
+  var cleaned = video.replace('&autoplay=1',''); // removing autoplay form url
+  document.getElementById(video_id).src = cleaned;
+  document.getElementById(div).style.display = 'none';
+}
+
+</script>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tab-detail-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+{%endfor%}
+{% endblock %}
+
+  

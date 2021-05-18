@@ -1,0 +1,92 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{% block content %}
+{% include "movies/colection_navbar.html" %}
+<body style="background-color:white">
+
+
+<div class="contentst" style="background:white">
+<div id="site-content">
+ <div class="container">
+
+
+
+    <div class="wrapper_collection">
+                                    <div class="row" style="margin-left:5px;margin-right:5px">
+
+                                        {%for movie in  movies %}
+
+
+                                            <div class="col-md-3" style="padding-right: 1px;padding-left: 1px">
+                                              <div class="card mb-2" style="border:none">
+                                                  <div class="containercard-col">
+                                                    <img class="image-col" src="{{movie.image.url}}"
+                                                        alt="Card image cap" style="height:360px">
+                                                      <div class="middle-col " style="margin-left:5%">
+                                                              <a href="/movie/detail/{{movie.url}}" class="btn btn-primary" style="border-color:#28a745;background:black;font-size:17px;margin-bottom:100px">Read More</a>
+                                                          </div>
+                                                      <div class="card-body">
+                                                             <h3>
+                                                              <a style="color:black;" href="detail/{{movie.url}}">{{movie.title}}</a>
+                                                              <p>
+                                                                <span style="font-size:20px;">&#11088;</span>
+                                                                <span style="font-size:20px;color:black">{{movie.imdb_rating}}</span>
+                                                                  <span style="font-size:15px;color:black">/10</span>
+                                                             </p>
+
+
+                                                          </h3>
+                                                      </div>
+                                                    </div>
+                                              </div>
+                                            </div>
+
+
+
+{% endfor%}
+                                      </div>
+
+                                    </div>
+
+
+
+
+     <ul class="pagination pagination justify-content-center" >
+    {% if movies.has_previous %}
+                <li class="page-item"><a style="background:black;color:white" class="page-link" href="?page={{movies.previous_page_number}}">Previous</a></li>
+             {%endif%}
+    {%for pg in movies.paginator.page_range%}
+              {%if movies.number == pg%}
+              <li class="active page-item" ><a style="background:black;color:red"  class="page-link" href="?page={{pg}}">{{pg}}</a></li>
+             {%else%}
+             <li class="page-item"><a style="background:black;color:white" class="page-link" href="?page={{pg}}">{{pg}}</a></li>
+             {%endif%}
+    {%endfor%}
+
+             {%if movies.has_next%}
+            <li class="page-item"><a style="background:black;color:white" class="page-link" href="?page={{movies.next_page_number}}">Next</a></li>
+             {%endif%}
+  </ul>
+
+
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+</div>
+<!--end site-container    -->
+</div>
+
+
+</body>
+
+
+{% endblock content %}

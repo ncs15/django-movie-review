@@ -1,0 +1,58 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TheWatcher - Home</title>
+  <meta charset="utf-16 ">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!--<script src="https://fonts.googleapis.com/css?family=Roboto:400,500&amp;display=swap"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"></script>-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500&amp;display=swap">
+
+    <link rel="stylesheet" href="{% static 'js/test/style.css' %}">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+
+	<script src="{% static 'js/test/script.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'style.css' %} " type="text/css"/>
+    <link rel="stylesheet" href="{% static 'js/test/nav.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'col-style.css' %} " type="text/css"/>
+    <link rel="stylesheet" href="{% static 'collection-nav.css' %} " type="text/css"/>
+    <link rel="stylesheet" href="{% static 'detail.css' %} " type="text/css"/>
+
+
+    <script src="{% static 'js/ie-support/html5.js' %}"></script>
+    <script src="{% static 'js/ie-support/respond.js' %}"></script>
+
+
+</head>
+
+<body>
+
+
+{% include "navbar.html" %}
+
+{% block content %}
+
+
+
+
+
+
+{% endblock content %}
+
+{%include 'footer.html'%}
+
+
+
+<script type="text/javascript" src="{% static 'js/custom-base.js' %}"></script>
+</body>
+</html>
+
+
