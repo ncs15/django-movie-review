@@ -1,6 +1,6 @@
 Django Movie Review
 
 This is my first working project made in django. 
-I know there are some problems in writing the code, but I learned along the way and it would have been quite difficult to fix.
+I know there are some problems in writing the code, but I learned along the way and it would have been quite difficult to fix them.
 
-You can finde the working version here: http://thewatcher-reviews.com/
+You can find the working version here: http://thewatcher-reviews.com/
